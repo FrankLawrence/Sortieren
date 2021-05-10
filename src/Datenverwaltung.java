@@ -24,7 +24,7 @@ public class Datenverwaltung {
         int bestes, speicherzeiger;
         int ende = daten.length-1;
         int anfang = 0;
-        while(anfang<daten.length-1){
+        while(anfang<ende){
             bestes = anfang;
             speicherzeiger = anfang;
             while(speicherzeiger<ende-1){
@@ -67,7 +67,19 @@ public class Datenverwaltung {
      * sortiert die Daten im Array int[] daten mit Hilfe von Insertionsort
      */
     public void insertionSort() {
-        // Vervollständige den Code
+        int anfang = 0;
+        int speicherzeiger;
+        int ende = daten.length-1;
+        while(anfang<ende){
+            speicherzeiger = 0;
+            anfang++;
+            while (speicherzeiger<=anfang) {
+                if (daten[anfang] < daten[speicherzeiger]) {
+                    tauscheElementeAnPositionen(anfang, speicherzeiger);
+                }
+                speicherzeiger++;
+            }
+        }
     }
 
     /**********************************************************
