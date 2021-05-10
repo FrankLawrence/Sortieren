@@ -27,15 +27,13 @@ public class Datenverwaltung {
         while(anfang<ende){
             bestes = anfang;
             speicherzeiger = anfang;
-            while(speicherzeiger<ende-1){
+            while(speicherzeiger<ende){
                 speicherzeiger++;
                 if(daten[speicherzeiger]<daten[bestes]){
                     bestes = speicherzeiger;
                 }
             }
-            int temp = daten[anfang];
-            daten[anfang] =  daten[bestes];
-            daten[bestes] = temp;
+            tauscheElementeAnPositionen(anfang,bestes);
             anfang++;
         }
 
@@ -52,10 +50,8 @@ public class Datenverwaltung {
         while(anfang-ende!=0){
             speicherzeiger = anfang;
             while(speicherzeiger!=ende){
-                if(daten[speicherzeiger]<daten[speicherzeiger+1]){
-                    int temp = daten[speicherzeiger];
-                    daten[speicherzeiger] = daten[speicherzeiger+1];
-                    daten[speicherzeiger+1] = temp;
+                if(daten[speicherzeiger]>daten[speicherzeiger+1]){
+                    tauscheElementeAnPositionen(speicherzeiger,speicherzeiger+1);
                 }
                 speicherzeiger++;
             }
