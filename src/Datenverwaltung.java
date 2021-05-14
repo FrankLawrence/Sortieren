@@ -78,6 +78,10 @@ public class Datenverwaltung {
         }
     }
 
+    public void quicksort(){
+
+    }
+
     /**********************************************************
      *
      * AB HIER NICHTS MEHR ÄNDERN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -96,8 +100,8 @@ public class Datenverwaltung {
      * prints the Array to the console
      */
     public void printDaten() {
-        for (int i = 0; i < daten.length; i++) {
-            System.out.println(daten[i]);
+        for (int j : daten) {
+            System.out.println(j);
         }
     }
     /*
