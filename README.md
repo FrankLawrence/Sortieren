@@ -1,3 +1,4 @@
 # Sortieren
-Bubble-,Selection-, and Insertionsort
+Bubble-,Selection-, and Insertionsort 
+
 Various ways of sorting numbers
