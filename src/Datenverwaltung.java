@@ -78,6 +78,7 @@ public class Datenverwaltung {
         }
     }
 
+
     public int teile(int links, int rechts){
         int i = links;
         int j = rechts-1;
@@ -107,7 +108,6 @@ public class Datenverwaltung {
         }
     }
 
-
     /**********************************************************
      *
      * AB HIER NICHTS MEHR ÄNDERN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -126,6 +126,7 @@ public class Datenverwaltung {
      * prints the Array to the console
      */
     public void printDaten() {
+
         System.out.println(java.util.Arrays.toString(daten));
     }
     /*
