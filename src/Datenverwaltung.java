@@ -78,9 +78,35 @@ public class Datenverwaltung {
         }
     }
 
-    public void quicksort(){
-
+    public int teile(int links, int rechts){
+        int i = links;
+        int j = rechts-1;
+        int pivot = daten[rechts];
+        while (i < j){
+            while (i < rechts && daten[i] <= pivot){
+                i++;
+            }
+            while (j > links && daten[j] > pivot){
+                j--;
+            }
+            if (i < j){
+                tauscheElementeAnPositionen(i,j);
+            }
+        }
+        if (daten[i] > pivot){
+            tauscheElementeAnPositionen(i,rechts);
+        }
+        return i;
     }
+
+    public void quicksort (int links, int rechts){
+        if (links<rechts){
+            int teiler = teile(links,rechts);
+            quicksort(links,teiler-1);
+            quicksort(teiler+1,rechts);
+        }
+    }
+
 
     /**********************************************************
      *
@@ -100,9 +126,7 @@ public class Datenverwaltung {
      * prints the Array to the console
      */
     public void printDaten() {
-        for (int j : daten) {
-            System.out.println(j);
-        }
+        System.out.println(java.util.Arrays.toString(daten));
     }
     /*
      * stellt die Anzahl der Vergleiche für die Oberfläche bereit
@@ -131,7 +155,7 @@ public class Datenverwaltung {
     public void zufaelligeDatensaetzeErzeugen(int anzahl) {
         daten = new int[anzahl];
         for (int i = 0; i < anzahl; i++) {
-            daten[i] = (int) (Math.random() * anzahl * 10);
+            daten[i] = (int) (Math.random() * anzahl );
         }
     }
 
