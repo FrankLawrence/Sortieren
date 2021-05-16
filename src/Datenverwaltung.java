@@ -79,32 +79,32 @@ public class Datenverwaltung {
     }
 
 
-    public int teile(int links, int rechts){
-        int i = links;
-        int j = rechts-1;
-        int pivot = daten[rechts];
-        while (i < j){
-            while (i < rechts && daten[i] <= pivot){
-                i++;
+    public int teile(int anfang, int ende){
+        int left= anfang;
+        int right = ende-1;
+        int pivot = daten[ende];
+        while (left<right){
+            while (left< ende && daten[left] <= pivot){
+                left++;
             }
-            while (j > links && daten[j] > pivot){
-                j--;
+            while (right > anfang && daten[right] > pivot){
+                right--;
             }
-            if (i < j){
-                tauscheElementeAnPositionen(i,j);
+            if (left< right){
+                tauscheElementeAnPositionen(left,right);
             }
         }
-        if (daten[i] > pivot){
-            tauscheElementeAnPositionen(i,rechts);
+        if (daten[left] > pivot){
+            tauscheElementeAnPositionen(left,ende);
         }
-        return i;
+        return left;
     }
 
-    public void quicksort (int links, int rechts){
-        if (links<rechts){
-            int teiler = teile(links,rechts);
-            quicksort(links,teiler-1);
-            quicksort(teiler+1,rechts);
+    public void quicksort (int anfang, int ende){
+        if (anfang<ende){
+            int teiler = teile(anfang,ende);
+            quicksort(anfang,teiler-1);
+            quicksort(teiler+1,ende);
         }
     }
 
@@ -155,7 +155,7 @@ public class Datenverwaltung {
      */
     public void zufaelligeDatensaetzeErzeugen(int anzahl) {
         daten = new int[anzahl];
-        for (int i = 0; i < anzahl; i++) {
+        for (int i= 0;i< anzahl; i++) {
             daten[i] = (int) (Math.random() * anzahl );
         }
     }
@@ -168,7 +168,7 @@ public class Datenverwaltung {
      */
     public void datensaetzeMitWiederholungErzeugen(int anzahl) {
         daten = new int[anzahl];
-        for (int i = 0; i < anzahl; i++) {
+        for (int i= 0;i< anzahl; i++) {
             daten[i] = (int) (Math.random() * anzahl / 2);
         }
     }

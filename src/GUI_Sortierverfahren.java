@@ -129,7 +129,7 @@ public class GUI_Sortierverfahren extends JFrame {
         // Ausgabefeld leeren
         textAreaDatensaetze.setText("");
         // Datensätze ausgeben
-        for (int i = 0; i < datenverwaltung.getDaten().length; i++) {
+        for (int i= 0;i< datenverwaltung.getDaten().length; i++) {
             textAreaDatensaetze.append(datenverwaltung.getDaten()[i] + "\n");
         }
         // Zeitdauer setzen
